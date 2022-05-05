@@ -4,7 +4,7 @@
         <title>OH MY FOOD</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width-device-width, initial-scale=1.0, user-scale=0"/>
-        <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" href=".public/css/style.css"/>
         <link rel="stylesheet" href="normalize.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -19,8 +19,8 @@
             <!--HEADER-->
 
             <header class="header flex">
-                <div class="header__retour"><i class="fas fa-arrow-left"></i></div>
-                <div class="header__logo"><img src="images/ohmyfood.png" alt="logo_ohmyfood"/></div>
+                <div class="header__retour flex"><i class="fas fa-arrow-left"></i></div>
+                <div class="header__logo flex"><img src="images/logos/ohmyfood_mini.png" alt="logo_ohmyfood"/></div>
             </header>
 
             <!--RECHERCHE-->
@@ -29,95 +29,146 @@
 
                 <!--RECHERCHE LIEU-->
 
-                <div class="recherche__localisation">
-                    <div class="localisation__icone"><i class="fas fa-location-dot"></i></div>
-                    <input class="localisation__champ flex" type="search" placeholder="Paris, Belleville"/>
+                <div class="recherche__localisation flex">
+                    <div class="recherche__localisation--icone flex"><i class="fas fa-location-dot"></i></div>
+                    <input class="recherche__localisation--champ flex" type="search" placeholder="Paris, Belleville"/>
                 </div>
 
                 <!--RECHERCHE RESTAURANTS-->
 
-                <div class="recherche__adresse">
-                    <h2>Réservez le menu qui vous convient</h2>
-                    <p>Découvrez des restaurants d'exeption, séléctionnés par nos soins.</p>
-                    <button class="adresse__bouton adresse__bouton--actif">Explorer nos restaurants</button>
+                <div class="recherche__adresse flex">
+                    <div class="recherche__adresse--titre flex">
+                        <h2>Réservez le menu qui vous convient</h2>
+                    </div>
+                    <div class="recherche__adresse--texte flex">
+                        <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+                    </div>
+                    <a href="#liste_des_restaurants">
+                        <button class="adresse__bouton adresse__bouton--actif flex">Explorer nos restaurants</button>
+                    </a>
                 </div>
 
             </section>
             
             <!--FONCTIONNEMENT DU SITE-->
 
-            <section class="guide">
-                <h3>Fonctionnement</h3>
-                <ol class="guide__etapes">
-                    <li class="etapes__choix etapes__choix--actif">
-                        <div class="etapes__icone">
-                            <i class="fas fa-mobile-screen"></i>
+            <section class="guide flex">
+                <h2 class="guide guide__titre flex">Fonctionnement</h2>
+                <ol class="guide guide__menu flex">
+                    <li class="guide guide__etapes flex">
+                        <p class="guide guide__etapes guide__etapes--numero flex">1</p>
+                        <div class="guide guide__etapes guide__etapes--icone flex">
+                            <i class="fas fa-mobile-screen fa-xl"></i>
                         </div>
-                        <p class="etapes__detail">Choisissez un restaurant</p>
+                        <p class="guide guide__etapes guide__etapes--detail flex">Choisissez un restaurant</p>
                     </li>
-                    <li class="etapes__composition etapes__composition--actif">
-                        <div class="etapes__icone">
-                            <i class="fas fa-list"></i>
+                    <li class="guide guide__etapes flex">
+                        <p class="guide guide__etapes guide__etapes--numero flex">2</p>
+                        <div class="guide guide__etapes guide__etapes--icone flex">
+                            <i class="fas fa-list fa-xl"></i>
                         </div>
-                        <p class="etapes__detail">Composez votre menu</p>
+                        <p class="guide guide__etapes guide__etapes--detail flex">Composez votre menu</p>
                     </li>
-                    <li class="etapes__degustation etapes__degustation--actif">
-                        <div class="etapes__icone">
-                            <i class="fa-solid fa-store"></i>
+                    <li class="guide guide__etapes guide__etapes--actif flex">
+                        <p class="guide guide__etapes guide__etapes--numero flex">3</p>
+                        <div class="guide guide__etapes guide__etapes--icone guide__etapes--actif flex">
+                            <i class="fa-solid fa-store fa-xl"></i>
                         </div>
-                        <p>Dégustez au restaurant</p>
+                        <p class="guide guide__etapes guide__etapes--detail guide__etapes--actif flex">Dégustez au restaurant</p>
                     </li>
                 </ol>
             </section>
 
             <!--LISTE RESTAURANTS-->
 
-            <section class="resultats">
+            <section id="liste_des_restaurants" class="resultats flex">
 
-                <h3>Restaurant</h3>
+                <h2 class="resultats__titre flex">Restaurant</h2>
 
-                <div class="restos">
+                <div class="restos flex">
                     
                     <a href="#"><!--ENTRER LE LIEN DE LA PAGE DU RESTAURANT-->
-                        <div class="restos__carte">
-                            <img src="images/" title="La palette du goût" alt="La palette du goût"/>
-                            <div class="carte__legende">
-                                <h4>La palette du goût</h4>
-                                <p>Menilmontant</p>
-                                <i class="far fa-heart"></i>
+                        <div class="restos__carte flex">
+                            <img class="restos__carte--image flex" src="images/restaurants/la_palette_du_gout.jpg" title="La palette du goût" alt="La palette du goût"/>
+                            <div class="restos__carte--etiquette">
+                                <p>Nouveau</p>
+                            </div>
+                            <div class="restos__carte--legende flex">
+                                <div class="legende__infos">
+                                    <h4 class="legende__nom flex">La palette du goût</h4>
+                                    <p class="legende__ville flex">Menilmontant</p>
+                                </div>
+                                <div class="legende__icone flex">
+                                    <div class="legende__icone--inactif">
+                                        <i class="far fa-heart fa-xl"></i>
+                                    </div>
+                                    <div class="legende__icone--actif">
+                                        <i class="fas fa-heart fa-xl"></i>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                    </a>
+
+                    <a href="la_note_enchantee.html"><!--ENTRER LE LIEN DE LA PAGE DU RESTAURANT-->
+                        <div class="restos__carte flex">
+                            <img class="restos__carte--image flex" src="images/restaurants/la_note_enchantee.jpg" title="La note enchantée" alt="La note enchantée"/>
+                            <div class="restos__carte--etiquette">
+                                <p>Nouveau</p>
+                            </div>
+                            <div class="restos__carte--legende flex">
+                                <div class="legende__infos">
+                                    <h4 class="legende__nom flex">La note enchantée</h4>
+                                    <p class="legende__ville flex">Charonne</p>
+                                </div>
+                                <div class="legende__icone flex">
+                                    <div class="legende__icone--inactif">
+                                        <i class="far fa-heart fa-xl"></i>
+                                    </div>
+                                    <div class="legende__icone--actif">
+                                        <i class="fas fa-heart fa-xl"></i>
+                                    </div>
+                                </div>
                             </div>                        
                         </div>
                     </a>
 
                     <a href="#"><!--ENTRER LE LIEN DE LA PAGE DU RESTAURANT-->
-                        <div class="restos__carte">
-                            <img src="images/" title="La note enchantée" alt="La note enchantée"/>
-                            <div class="carte__legende">
-                                <h4>La note enchantée</h4>
-                                <p>Charonne</p>
-                                <i class="far fa-heart"></i>
+                        <div class="restos__carte flex">
+                            <img class="restos__carte--image flex" src="images/restaurants/a_la_francaise.jpg" title="A la française" alt="A la française"/>
+                            <div class="restos__carte--legende flex">
+                                <div class="legende__infos">
+                                    <h4 class="legende__nom flex">A la française</h4>
+                                    <p class="legende__ville flex">Cité Rouge</p>
+                                </div>
+                                <div class="legende__icone flex">
+                                    <div class="legende__icone--inactif">
+                                        <i class="far fa-heart fa-xl"></i>
+                                    </div>
+                                    <div class="legende__icone--actif">
+                                        <i class="fas fa-heart fa-xl"></i>
+                                    </div>
+                                </div>
                             </div>                        
                         </div>
                     </a>
 
                     <a href="#"><!--ENTRER LE LIEN DE LA PAGE DU RESTAURANT-->
-                        <div class="restos__carte">
-                            <img src="images/" title="A la française" alt="A la française"/>
-                            <div class="carte__legende">
-                                <h4>A la française</h4>
-                                <p>Cité Rouge</p>
-                                <i class="far fa-heart"></i>
-                            </div>                        
-                        </div>
-                    </a>
-
-                    <a href="#"><!--ENTRER LE LIEN DE LA PAGE DU RESTAURANT-->
-                        <div class="restos__carte">
-                            <img src="images/" title="Le délice des sens" alt="Le délice des sens"/>
-                            <div class="carte__legende">
-                                <h4>Le délice des sens</h4>
-                                <p>Folie-Méricourt</p>
-                                <i class="far fa-heart"></i>
+                        <div class="restos__carte flex">
+                            <img class="restos__carte--image flex" src="images/restaurants/le_delice_des_sens.jpg" title="Le délice des sens" alt="Le délice des sens"/>
+                            <div class="restos__carte--legende flex">
+                                <div class="legende__infos">
+                                    <h4 class="legende__nom flex">Le délice des sens</h4>
+                                    <p class="legende__ville flex">Folie-Méricourt</p>
+                                </div>
+                                <div class="legende__icone flex">
+                                    <div class="legende__icone--inactif">
+                                        <i class="far fa-heart fa-xl"></i>
+                                    </div>
+                                    <div class="legende__icone--actif">
+                                        <i class="fas fa-heart fa-xl"></i>
+                                    </div>
+                                </div>
                             </div>                        
                         </div>
                     </a>
@@ -127,24 +178,27 @@
 
             <!--FOOTER-->
 
-            <footer class="footer">
-                <img src="images/ohmyfood_xxs.png" alt="logo_ohmyfood"/>
-                <ol class="footer__liste">
-                    <li class="liste__proposition">
-                        <i class="fas fa-utensils"></i>
-                        <p>Proposer un restaurant</p>
-                    </li>
-                    <li class="liste__partenaire">
-                        <i class="fas fa-handshake-simple"></i>
-                        <p>Devenir partenaire</p>
-                    </li>
-                    <li>
-                        <p>Mentions légales</p>
-                    </li>
-                    <li>
-                        <a href="mailto:contact@ohmyfood.fr">Contact</a>
-                    </li>
-                </ol>
+            <footer class="footer flex">
+                <div class="footer footer__menu">
+                    <h2 class="footer footer__titre flex"><p class="titre">ohmyfood</p></h2>
+                    <ol class="footer footer__liste flex">
+                        <li class="footer footer__liste footer__liste--proposition flex">
+                            <i class="fas fa-utensils"></i>
+                            <p class="texte">Proposer un restaurant</p>
+                        </li>
+                        <li class="footer footer__liste footer__liste--partenaire  flex">
+                            <i class="fas fa-handshake-angle"></i>
+                            <p class="texte">Devenir partenaire</p>
+                        </li>
+                        <li class="footer footer__liste footer__liste--mentions">
+                            <p class="texte">Mentions légales</p>
+                        </li>
+                        <li class="footer footer__liste footer__liste--contact">
+                            <a class="lien" href="mailto:contact@ohmyfood.fr"><p class="texte">Contact</p></a>
+                        </li>
+                    </ol>
+                </div>
             </footer>
         </div>
     </body>
+</html>
