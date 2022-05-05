@@ -109,12 +109,14 @@ header .fas {
     border-width: 0;
     background: linear-gradient(350deg, $couleur-primaire, $couleur-secondaire) ;
     box-shadow: 2px 2px 8px grey;
-    
-    :hover {
-        cursor: pointer;
-    }
 }
 
+    .adresse__bouton:hover {
+        background: $couleur-primaire;
+        box-shadow: 5px 5px 10px grey;
+        cursor: wait;
+    }
+    
 
 /*FONCTIONNEMENT DU SITE*/
 
@@ -127,8 +129,8 @@ header .fas {
     
     
     .guide__titre {
-        width: 85%;
-        margin: 0 0 0 -30px;
+        width: 90%;
+        margin: 0;
         align-items: baseline;
     }
     
@@ -140,7 +142,7 @@ header .fas {
     }
     
     .guide__etapes {
-        width: 85%;
+        width: calc(85% - 15px);
         height: 80px;
         position: relative;
         margin: 0;
@@ -196,18 +198,21 @@ header .fas {
 /*LISTE DES RESTAURANTS*/
 
 #liste_des_restaurants {
-    width: 90%;
+    width: 100%;
     flex-direction: column;
-    margin: auto;
+    align-items: center;
 }
 
 /*CARTES DES RESTAURANTS*/
 
 .resultats__titre {
-    margin-bottom: 25px;
+    width: 90%;
+    align-content: flex-start;
+    margin: 0 0 25px 0;
 }
 
 .restos {
+    width: 90%;
     flex-direction: column;
     row-gap: 15px;
 }
