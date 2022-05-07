@@ -39,7 +39,7 @@ h4 {
 header {
     min-width: 100%;
     height: 70px;
-    box-shadow: 2px 2px 5px grey;
+    box-shadow: 3px 3px 8px grey;
 
     .header__logo {
         width: 100%;
@@ -59,6 +59,7 @@ header .fas {
 .recherche {
     flex-direction: column;
     width: 100%;
+    margin-top: 5px;
 
     .recherche__localisation {
         width: 100%;
@@ -67,16 +68,23 @@ header .fas {
         align-items: center;
         gap: 15px;
         background-color: #EAEAEA;
-        z-index: -1;
+        
 
         .recherche__localisation--champ {
+            height: 30px;
             background-color: #EAEAEA;
             border: 0;
-            }
-            .recherche__localisation--champ::placeholder {
+            
+            &::placeholder {
+                text-align: center;
                 color: black;
                 opacity: 1;
             }
+            
+            &:focus {
+            outline-color: lighten($color: $couleur-primaire, $amount: 25%);
+            }
+        }
     }
     
     .recherche__adresse {
@@ -107,15 +115,15 @@ header .fas {
     color: white;
     border-radius: 25px;
     border-width: 0;
-    background: linear-gradient(350deg, $couleur-primaire, $couleur-secondaire) ;
+    background: linear-gradient(350deg, $couleur-primaire, $couleur-secondaire);
     box-shadow: 2px 2px 8px grey;
-}
-
-    .adresse__bouton:hover {
-        background: $couleur-primaire;
+    
+    &:hover {
+        background: linear-gradient(350deg, lighten($couleur-primaire, 3), lighten($couleur-secondaire, 3));
         box-shadow: 5px 5px 10px grey;
-        cursor: wait;
+        cursor: pointer;
     }
+}
     
 
 /*FONCTIONNEMENT DU SITE*/
@@ -135,6 +143,7 @@ header .fas {
     }
     
     .guide__menu {
+        width: 90%;
         flex-direction: column;
         row-gap: 20px;
         padding: 0;
@@ -142,7 +151,7 @@ header .fas {
     }
     
     .guide__etapes {
-        width: calc(85% - 15px);
+        width: 90%;
         height: 80px;
         position: relative;
         margin: 0;
@@ -157,42 +166,49 @@ header .fas {
             width: 30px;
             height: 30px;
             position: absolute;
+            z-index: 1;
+            left: -15px;
             align-items: center;
             justify-content: center;
-            margin-left: -15px;
             border-radius: 15px;
             color: white;
             background-color: $couleur-primaire;
         }
         
         .guide__etapes--icone {
-            width: 15%;
-            margin-left: 50px;
+            width: fit-content;
+            position: absolute;
+            left: 40px;
+            z-index: 1;
             color: grey;
-            background-color: none;
+            background-color: transparent;
             box-shadow: none;
         }
         
         .guide__etapes--detail {
             @include police-texte;
+            width: fit-content;
+            position: absolute;
+            left: 80px;
+            z-index: 1;
             font-size: large;
-            background-color: none;
+            background-color: transparent;
             box-shadow: none;
+        }
+
+        &:hover {
+            background-color: lighten($color: $couleur-primaire, $amount: 35%);
+            
+            .fas {
+                color: $couleur-primaire;
+            }
+
+            .guide__etapes--numero {
+                background-color: $couleur-primaire;
+            }
         }
         
     }
-    
-    .guide__etapes--actif {
-        background-color: #F4EDFE;
-    }
-}
-
-
-
-
-
-.fa-store {
-    color: $couleur-primaire;
 }
 
 /*LISTE DES RESTAURANTS*/
@@ -226,16 +242,13 @@ header .fas {
     box-shadow: 5px 5px 10px lightgrey;
     position: relative;
 
-    :hover{
-        cursor: zoom-in;
-    }
-
+    
     .restos__carte--image {
         width: 100%;
         height: 75%;
         object-fit: cover;
     }
-
+    
     .restos__carte--etiquette {
         width:fit-content;
         height: fit-content;
@@ -248,12 +261,16 @@ header .fas {
         top: 15px;
         right: 15px;
     }
-
+    
     .restos__carte--legende {
         height: 25%;
         justify-content: space-between;
         align-items: center;
         margin: 0 10px;
+    }
+
+    &:hover {
+        cursor: zoom-in;
     }
 }
 
@@ -262,13 +279,25 @@ header .fas {
     color: black;
 }
 
-.legende__icone {
-    color: black;
-
-    .legende__icone--actif {
-        display: none;
+    .legende__icone {
+        color: $couleur-primaire;
+        background: -webkit-linear-gradient(260deg, $couleur-primaire, $couleur-secondaire);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-color: #fff;
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 3s;
+    
     }
-}
+
+
+/*ESSAIS ANIMATIONS*/
 
 
 /*FOOTER*/

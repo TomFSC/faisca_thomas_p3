@@ -24,7 +24,7 @@ h4 {
 header {
   min-width: 100%;
   height: 70px;
-  box-shadow: 2px 2px 5px grey;
+  box-shadow: 3px 3px 8px grey;
 }
 header .header__logo {
   width: 100%;
@@ -42,6 +42,7 @@ header .fas {
 .recherche {
   flex-direction: column;
   width: 100%;
+  margin-top: 5px;
 }
 .recherche .recherche__localisation {
   width: 100%;
@@ -50,15 +51,19 @@ header .fas {
   align-items: center;
   gap: 15px;
   background-color: #EAEAEA;
-  z-index: -1;
 }
 .recherche .recherche__localisation .recherche__localisation--champ {
+  height: 30px;
   background-color: #EAEAEA;
   border: 0;
 }
 .recherche .recherche__localisation .recherche__localisation--champ::placeholder {
+  text-align: center;
   color: black;
   opacity: 1;
+}
+.recherche .recherche__localisation .recherche__localisation--champ:focus {
+  outline-color: #d7c0f2;
 }
 .recherche .recherche__adresse {
   flex-direction: column;
@@ -88,11 +93,10 @@ header .fas {
   background: linear-gradient(350deg, #9356DC, #FF79DA);
   box-shadow: 2px 2px 8px grey;
 }
-
 .adresse__bouton:hover {
-  background: #9356DC;
+  background: linear-gradient(350deg, #9b63df, #ff88de);
   box-shadow: 5px 5px 10px grey;
-  cursor: wait;
+  cursor: pointer;
 }
 
 /*FONCTIONNEMENT DU SITE*/
@@ -109,13 +113,14 @@ header .fas {
   align-items: baseline;
 }
 .guide .guide__menu {
+  width: 90%;
   flex-direction: column;
   row-gap: 20px;
   padding: 0;
   margin: 0;
 }
 .guide .guide__etapes {
-  width: calc(85% - 15px);
+  width: 90%;
   height: 80px;
   position: relative;
   margin: 0;
@@ -129,32 +134,41 @@ header .fas {
   width: 30px;
   height: 30px;
   position: absolute;
+  z-index: 1;
+  left: -15px;
   align-items: center;
   justify-content: center;
-  margin-left: -15px;
   border-radius: 15px;
   color: white;
   background-color: #9356DC;
 }
 .guide .guide__etapes .guide__etapes--icone {
-  width: 15%;
-  margin-left: 50px;
+  width: fit-content;
+  position: absolute;
+  left: 40px;
+  z-index: 1;
   color: grey;
-  background-color: none;
+  background-color: transparent;
   box-shadow: none;
 }
 .guide .guide__etapes .guide__etapes--detail {
   font-family: "Roboto", sans-serif;
+  width: fit-content;
+  position: absolute;
+  left: 80px;
+  z-index: 1;
   font-size: large;
-  background-color: none;
+  background-color: transparent;
   box-shadow: none;
 }
-.guide .guide__etapes--actif {
-  background-color: #F4EDFE;
+.guide .guide__etapes:hover {
+  background-color: #f2eafb;
 }
-
-.fa-store {
+.guide .guide__etapes:hover .fas {
   color: #9356DC;
+}
+.guide .guide__etapes:hover .guide__etapes--numero {
+  background-color: #9356DC;
 }
 
 /*LISTE DES RESTAURANTS*/
@@ -186,9 +200,6 @@ header .fas {
   box-shadow: 5px 5px 10px lightgrey;
   position: relative;
 }
-.restos__carte :hover {
-  cursor: zoom-in;
-}
 .restos__carte .restos__carte--image {
   width: 100%;
   height: 75%;
@@ -212,6 +223,9 @@ header .fas {
   align-items: center;
   margin: 0 10px;
 }
+.restos__carte:hover {
+  cursor: zoom-in;
+}
 
 .legende__infos {
   flex-direction: column;
@@ -219,12 +233,22 @@ header .fas {
 }
 
 .legende__icone {
-  color: black;
-}
-.legende__icone .legende__icone--actif {
-  display: none;
+  color: #9356DC;
+  background: -webkit-linear-gradient(260deg, #9356DC, #FF79DA);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #fff;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 3s;
 }
 
+/*ESSAIS ANIMATIONS*/
 /*FOOTER*/
 footer {
   flex-direction: column;
