@@ -10,10 +10,6 @@
   display: flex;
 }
 
-a {
-  text-decoration: none;
-}
-
 p,
 h2,
 h4 {
@@ -187,6 +183,7 @@ header .fas {
 
 .restos {
   width: 90%;
+  height: 1050px;
   flex-direction: column;
   row-gap: 15px;
 }
@@ -202,7 +199,7 @@ header .fas {
 }
 .restos__carte .restos__carte--image {
   width: 100%;
-  height: 75%;
+  height: 190px;
   object-fit: cover;
 }
 .restos__carte .restos__carte--etiquette {
@@ -218,34 +215,57 @@ header .fas {
   right: 15px;
 }
 .restos__carte .restos__carte--legende {
+  width: 100%;
   height: 25%;
+  position: absolute;
+  bottom: 0;
   justify-content: space-between;
   align-items: center;
   margin: 0 10px;
 }
-.restos__carte:hover {
-  cursor: zoom-in;
-}
-
-.legende__infos {
+.restos__carte .legende__infos {
   flex-direction: column;
   color: black;
 }
-
-.legende__icone {
-  color: #9356DC;
-  background: -webkit-linear-gradient(260deg, #9356DC, #FF79DA);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-color: #fff;
+.restos__carte .legende__icone {
   text-align: center;
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  right: 25px;
+}
+.restos__carte .icone--inactif {
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 3s;
+}
+.restos__carte .icone--inactif:hover {
+  cursor: pointer;
+}
+.restos__carte .icone--inactif:active {
+  display: none;
+}
+.restos__carte .icone--inactif:active + .icone--actif {
+  cursor: pointer;
+  display: inline-flex;
+}
+.restos__carte .icone--actif {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.restos__carte .legende__icone .fas {
+  font-size: 30px;
+  display: block;
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*ESSAIS ANIMATIONS*/
