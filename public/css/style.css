@@ -98,6 +98,7 @@ header .fas {
 /*FONCTIONNEMENT DU SITE*/
 .guide {
   width: 100%;
+  max-width: 600px;
   height: 350px;
   flex-direction: column;
   align-items: center;
@@ -171,6 +172,7 @@ header .fas {
 /*LISTE DES RESTAURANTS*/
 #liste_des_restaurants {
   width: 100%;
+  max-width: 600px;
   flex-direction: column;
   align-items: center;
 }
@@ -320,6 +322,64 @@ footer .footer__liste .footer__liste--partenaire {
 }
 footer .footer__liste .footer__liste--contact .lien {
   color: white;
+}
+
+/*Mise en page tablette*/
+@media (min-width: 768px) and (max-width: 991px) {
+  /*FONCTIONNEMENT DU SITE*/
+  .guide {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .guide .guide__titre {
+    width: fit-content;
+  }
+
+  /*LISTE DES RESTAURANTS*/
+  #liste_des_restaurants {
+    width: 600px;
+    margin: auto;
+  }
+
+  .resultats__titre {
+    justify-content: center;
+  }
+}
+/*MISE EN PAGE DESKTOP*/
+@media (min-width: 992px) {
+  /*FONCTIONNEMENT DU SITE*/
+  .guide {
+    width: 100%;
+    margin: 30px auto;
+  }
+  .guide .guide__titre {
+    width: fit-content;
+    font-size: xx-large;
+  }
+  .guide .guide__menu {
+    width: 600px;
+  }
+
+  /*LISTE DES RESTAURANTS*/
+  #liste_des_restaurants {
+    max-width: 100%;
+  }
+
+  .resultats__titre {
+    justify-content: center;
+    font-size: xx-large;
+  }
+
+  .restos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: fit-content;
+    row-gap: 50px;
+    justify-content: space-around;
+  }
+  .restos .restos__carte {
+    max-width: 600px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
