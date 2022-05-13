@@ -30,10 +30,6 @@ header .header__logo {
   align-self: flex-end;
 }
 
-header .fas {
-  display: none;
-}
-
 /*FOOTER*/
 footer {
   flex-direction: column;
