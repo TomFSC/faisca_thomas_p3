@@ -25,7 +25,9 @@ $couleur-tertiaire: #99E2D0;
     display: flex;
 }
 
-
+a {
+    text-decoration: none;
+}
 
 p,
 h2,
@@ -35,64 +37,113 @@ h4 {
 
 /*LOADING SPINNER*/
 
-.cadre {
+.cadre__load {
     position: absolute;
+    z-index: 2;
     width: 100%;
     height: 100%;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    background: linear-gradient(180deg, $couleur-primaire, $couleur-secondaire);
-    animation: reduction 5s, roulement 5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    animation: effacement 5s ease-in 1.5s 1 normal forwards, disparition 0s linear 7s 1 normal forwards;
+
 }
-    .load__spin {
-        position: absolute;
-        z-index: 3;
-        height: fit-content;
+
+.load__spin {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:200px;
+  height:200px;
+  background:white;
+  border:3px solid #EAEAEA;
+  border-radius:50%;
+  align-items: center;
+  justify-content: center;
+  @include police-titre;
+  font-size:30px;
+  color:$couleur-tertiaire;
+  text-shadow:0 0 10px $couleur-tertiaire;
+  box-shadow:0 0 20px grey;
+
+  &:before
+  {
+      content:'';
+      position:absolute;
+      top:-3px;
+      left:-3px;
+      width:100%;
+      height:100%;
+      border:3px solid transparent;
+      border-top:3px solid $couleur-tertiaire;
+      border-right:3px solid $couleur-tertiaire;
+      border-radius:50%;
+      animation:rotation-point 1.5s linear infinite;
+    }
+    span {
+        display:block;
+        position:absolute;
+        top:calc(50% - 2px);
+        left:50%;
+        width:50%;
+        height:4px;
+        background:transparent;
+        transform-origin:left;
+        animation:trainee 1.5s linear infinite;
+
+        &:before
+        {
+            content:'';
+            position:absolute;
+            width:16px;
+            height:16px;
+            border-radius:50%;
+            background:$couleur-tertiaire;
+            top:-6px;
+            right:-8px;
+            box-shadow:0 0 20px $couleur-tertiaire;
+        }
+    }
+}
+
+@keyframes disparition {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes effacement {
+    0% {
         opacity: 1;
-        animation: rotation 5s, apparence 5s linear;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
     }
-
-/*ANIMATIONS LOADING SPINNER*/
-
-@keyframes rotation {
-    from {
-        transform: rotateX(0deg);
-    }
-    to {
-        transform: rotateX(360deg);
-    }
-}
-@keyframes reduction {
-    from {
-        scale: 1;
-    }
-    to {
-        scale: 0;
-    }
-}
-
-@keyframes roulement {
-    from {
-        transform: rotateZ(0deg);
-    }
-    to {
-        transform: rotateZ(360deg);
-    }
-}
-@keyframes apparence {
-    from {
-        opacity: 1;
-    }
-    to {
+    100% {
         opacity: 0;
     }
 }
+@keyframes rotation-point {
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
 
+@keyframes trainee {
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
 /*HEADER*/
 
 header {
