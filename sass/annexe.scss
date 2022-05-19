@@ -44,12 +44,13 @@ header {
     .header__retour {
         color: black;
         font-size: 20px;
-        padding-left: 20px;
+        position: absolute;
+        left: 15px;
+        top: 25px; 
     }
 
     .header__logo {
         width: 100%;
-        height: fit-content;
         margin-bottom: 15px;
         justify-content: center;
         align-self: flex-end;
@@ -59,9 +60,11 @@ header {
 /*IMAGE RESTAURANT*/
 
 .image__restaurant {
-    width: 100%;
-    height: 450px;
+    max-width: 800px;
+    max-height: 500px;
     overflow: hidden;
+    margin: 0 auto;
+    
     
     .image__restaurant--plat {
         width: 100%;
@@ -74,14 +77,18 @@ header {
 
 .menu {
     flex-direction: column;
+    position: relative;
+    max-width: 800px;
     background-color: whitesmoke;
-    border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: -50px auto 0;
 
     .menu__titre {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        margin: 0 15px;
+        margin: 25px 20px;
 
         .titre__restaurant {
             @include police-titre;
@@ -89,25 +96,80 @@ header {
 
         .titre__coeur {
             font-size: 25px;
+            margin-right: 20px;
         }
     }
 
-    .menu__entrees {
+    .menu__plats {
         flex-direction: column;
-    }
+        margin: 0 20px 30px;
+        row-gap: 15px;
 
+        .plats__titre {
+            @include police-texte;
+            width: 30px;
+            overflow: visible;
+            font-weight: lighter;
+            border-bottom: 3px solid $couleur-tertiaire;
+            padding-bottom: 3px;
+        }
+
+        .menu__plats--description {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .description__assiette {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 20px;
+            align-self: center;
+            overflow: hidden;
+            
+            & .description {
+                width: 85%;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 15px;
+            }
+
+            & .assiette {
+                flex-direction: column;
+                row-gap: 10px;
+            }
+
+            & .prix {
+                align-self: flex-end;
+            }
+
+            & .validation {
+                width: 15%;
+                align-items: center;
+                justify-content: center;
+                background-color: $couleur-tertiaire;
+
+                & .fas {
+                    font-size: 20px;
+                    color: white;
+                }
+            }
+        }
+    }
 }
 
 /*BOUTON COMMANDER*/
 
 .bouton__commande {
-    width: 180px;
-    height: 60px;
+    width: 200px;
+    height: 50px;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 10px auto 75px;
     color: white;
-    border-radius: 30px;
+    border-radius: 25px;
     border-width: 0;
     background: linear-gradient(350deg, $couleur-primaire, $couleur-secondaire);
     box-shadow: 2px 2px 8px grey;
@@ -124,7 +186,6 @@ header {
 footer {
     flex-direction: column;
     width: 100%;
-    margin-top: 50px;
     color: whitesmoke;
     background-color: #363535;
 
