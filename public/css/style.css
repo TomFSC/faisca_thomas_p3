@@ -3,6 +3,7 @@
 /*Police*/
 /*Mise en page*/
 #bloc-page {
+  position: relative;
   max-width: 100%;
   min-height: 100%;
 }
@@ -30,7 +31,7 @@ h4 {
   background-color: white;
   top: 0;
   bottom: 0;
-  animation: effacement 5s ease-in 1.5s 1 normal forwards, disparition 0s linear 7s 1 normal forwards;
+  animation: effacement 3s ease-in 0.5s 1 normal forwards, disparition 0s linear 5s 1 normal forwards;
 }
 
 .load__spin {
@@ -62,7 +63,7 @@ h4 {
   border-top: 3px solid #99E2D0;
   border-right: 3px solid #99E2D0;
   border-radius: 50%;
-  animation: rotation-point 1.5s linear infinite;
+  animation: rotation-point 1s linear infinite;
 }
 .load__spin span {
   display: block;
@@ -73,7 +74,7 @@ h4 {
   height: 4px;
   background: transparent;
   transform-origin: left;
-  animation: trainee 1.5s linear infinite;
+  animation: trainee 1s linear infinite;
 }
 .load__spin span:before {
   content: "";

@@ -92,19 +92,23 @@ header .header__logo {
 .menu .menu__plats .menu__plats--description {
   padding: 0;
   margin: 0;
+  transform-origin: 50% 0%;
 }
 .menu .menu__plats .description__assiette {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   max-width: 600px;
+  height: 80px;
   background-color: white;
   border-radius: 20px;
+  box-shadow: 3px 3px 5px lightgrey;
   align-self: center;
   overflow: hidden;
+  animation: translation 5s linear;
 }
 .menu .menu__plats .description__assiette .description {
-  width: 85%;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
@@ -117,16 +121,65 @@ header .header__logo {
   align-self: flex-end;
 }
 .menu .menu__plats .description__assiette .validation {
-  width: 15%;
-  align-items: center;
-  justify-content: center;
-  background-color: #99E2D0;
+  width: 0;
 }
 .menu .menu__plats .description__assiette .validation .fas {
   font-size: 20px;
   color: white;
 }
+.menu .menu__plats .description__assiette:hover {
+  cursor: pointer;
+}
+.menu .menu__plats .description__assiette:hover .validation {
+  width: 15%;
+  align-items: center;
+  justify-content: center;
+  background-color: #99E2D0;
+  transform-origin: 100% 50%;
+  transition: width 0.5s linear;
+}
+.menu .menu__plats .description__assiette:hover .validation .fas {
+  animation: rotation-check 0.4s linear;
+}
 
+/*ESSAIS ANIMATIONS MENUS*/
+.menu__plats--description {
+  animation: deroule 3s linear, opacite 4s ease-in;
+}
+
+@keyframes opacite {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes deroule {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes translation {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/*ANIMATION CHECK PLATS*/
+@keyframes rotation-check {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /*BOUTON COMMANDER*/
 .bouton__commande {
   width: 200px;
