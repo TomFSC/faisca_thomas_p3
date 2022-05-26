@@ -75,6 +75,7 @@ header .header__logo {
 }
 .menu .menu__titre .titre__coeur {
   font-size: 30px;
+  align-items: center;
 }
 .menu .menu__titre .titre__coeur .titre__coeur--inactif {
   position: absolute;
@@ -82,17 +83,18 @@ header .header__logo {
   height: 30px;
   align-items: center;
   justify-content: center;
-  bottom: 1px;
   right: 20px;
   opacity: 1;
   z-index: 2;
 }
 .menu .menu__titre .titre__coeur .titre__coeur--actif {
   position: absolute;
-  bottom: 1px;
   right: 20px;
   opacity: 0;
   z-index: 1;
+}
+.menu .menu__titre .titre__coeur .titre__coeur--actif .fas {
+  font-size: 30px;
 }
 .menu .menu__titre .titre__coeur:hover {
   cursor: pointer;
@@ -133,18 +135,11 @@ header .header__logo {
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 3px;
 }
-.menu .menu__plats .menu__plats--description {
+.menu .menu__plats .menu__entree--description,
+.menu .menu__plats .menu__plats--description,
+.menu .menu__plats .menu__desserts--description {
   padding: 0;
   margin: 0;
-}
-.menu .menu__plats .menu__plats--description .description__assiette--premiere {
-  animation: translation-assiette 0.4s ease-out, opacite 0.1s linear;
-}
-.menu .menu__plats .menu__plats--description .description__assiette--deuxieme {
-  animation: translation-assiette 1.2s ease-out, opacite 0.2s linear;
-}
-.menu .menu__plats .menu__plats--description .description__assiette--troisieme {
-  animation: translation-assiette 1.8s ease-out, opacite 0.4s linear;
 }
 .menu .menu__plats .description__assiette {
   flex-direction: row;
@@ -157,6 +152,7 @@ header .header__logo {
   box-shadow: 3px 3px 5px lightgrey;
   align-self: center;
   overflow: hidden;
+  opacity: 0;
 }
 .menu .menu__plats .description__assiette .description {
   width: 100%;
@@ -182,7 +178,7 @@ header .header__logo {
   cursor: pointer;
 }
 .menu .menu__plats .description__assiette:hover .validation {
-  width: 15%;
+  width: 100px;
   align-items: center;
   justify-content: center;
   background-color: #99E2D0;
@@ -194,6 +190,14 @@ header .header__logo {
 }
 
 /*ANIMATIONS MENUS*/
+@keyframes animation-plats {
+  from {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 @keyframes opacite {
   from {
     opacity: 0;
@@ -202,14 +206,45 @@ header .header__logo {
     opacity: 1;
   }
 }
-@keyframes translation-assiette {
-  from {
-    transform: translateY(15%);
-  }
-  to {
-    transform: translateY(0);
-  }
+/*Animations entrees*/
+.premiere__entree {
+  animation: animation-plats 1s linear 0.2s 1 normal forwards, opacite 0.5s linear 0.2s 1 normal forwards;
 }
+
+.deuxieme__entree {
+  animation: animation-plats 1s linear 0.5s 1 normal forwards, opacite 0.5s linear 0.5s 1 normal forwards;
+}
+
+.troisieme__entree {
+  animation: animation-plats 1s linear 0.8s 1 normal forwards, opacite 0.5s linear 0.8s 1 normal forwards;
+}
+
+/*Animations plats*/
+.premier__plat {
+  animation: animation-plats 1s linear 1.3s normal forwards, opacite 0.5s linear 1.3s normal forwards;
+}
+
+.deuxieme__plat {
+  animation: animation-plats 1s linear 1.6s normal forwards, opacite 0.5s linear 1.6s normal forwards;
+}
+
+.troisieme__plat {
+  animation: animation-plats 1s linear 1.9s normal forwards, opacite 0.5s linear 1.9s normal forwards;
+}
+
+/*Animtions desserts*/
+.premier__dessert {
+  animation: animation-plats 1s linear 2.4s normal forwards, opacite 0.5s linear 2.4s normal forwards;
+}
+
+.deuxieme__dessert {
+  animation: animation-plats 1s linear 2.7s normal forwards, opacite 0.5s linear 2.7s normal forwards;
+}
+
+.troisieme__dessert {
+  animation: animation-plats 1s linear 3s normal forwards, opacite 0.5s linear 3s normal forwards;
+}
+
 /*ANIMATION CHECK PLATS*/
 @keyframes rotation-check {
   from {
