@@ -143,8 +143,7 @@ header .header__logo {
 }
 .menu .menu__plats .description__assiette {
   flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  width: 380px;
   max-width: 600px;
   height: 80px;
   background-color: white;
@@ -155,17 +154,30 @@ header .header__logo {
   opacity: 0;
 }
 .menu .menu__plats .description__assiette .description {
-  width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15px;
+  width: 100%;
 }
 .menu .menu__plats .description__assiette .assiette {
   flex-direction: column;
   row-gap: 10px;
+  min-width: 20%;
+  max-width: 70%;
+  height: 50px;
+  margin: 15px;
+  margin-right: 0;
+}
+.menu .menu__plats .description__assiette .assiette h4, .menu .menu__plats .description__assiette .assiette p {
+  min-width: 50px;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu .menu__plats .description__assiette .prix {
+  width: 40px;
   align-self: flex-end;
+  margin-bottom: 15px;
 }
 .menu .menu__plats .description__assiette .validation {
   width: 0;
@@ -178,10 +190,12 @@ header .header__logo {
   cursor: pointer;
 }
 .menu .menu__plats .description__assiette:hover .validation {
-  width: 100px;
+  width: 25%;
   align-items: center;
   justify-content: center;
   background-color: #99E2D0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   transform-origin: 100% 50%;
   transition: width 0.5s linear;
 }

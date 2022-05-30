@@ -175,8 +175,7 @@ header {
 
         .description__assiette {
             flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
+            width: 380px;
             max-width: 600px;
             height: 80px;
             background-color: white;
@@ -187,19 +186,33 @@ header {
             opacity: 0;
             
             & .description {
-                width: 100%;
                 flex-direction: row;
                 justify-content: space-between;
-                padding: 15px;
+                width: 100%;
+                
             }
 
             & .assiette {
                 flex-direction: column;
                 row-gap: 10px;
+                min-width: 20%;
+                max-width: 70%;
+                height: 50px;
+                margin: 15px;
+                margin-right: 0;
+                h4, p {
+                    min-width: 50px;
+                    max-width: 100%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
             }
 
             & .prix {
+                width: 40px;
                 align-self: flex-end;
+                margin-bottom: 15px;
             }
 
             & .validation {
@@ -216,10 +229,12 @@ header {
                 cursor: pointer;
 
                 .validation {
-                    width: 100px;
+                    width: 25%;
                     align-items: center;
                     justify-content: center;
                     background-color: $couleur-tertiaire;
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
                     transform-origin: 100% 50%;
                     transition: width 0.5s linear;
                     
