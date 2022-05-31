@@ -1,11 +1,11 @@
 /*PROPRIETES GENERALE*/
 
-/*Couleurs*/
+/*COULEURS*/
 $couleur-primaire: #9356DC;
 $couleur-secondaire: #FF79DA;
 $couleur-tertiaire: #99E2D0;
 
-/*Police*/
+/*POLICE*/
 @mixin police-titre {
     font-family: 'Shrikhand', sans-serif;
 }
@@ -14,7 +14,7 @@ $couleur-tertiaire: #99E2D0;
     font-family: 'Roboto', sans-serif;
 }
 
-/*Mise en page*/
+/*MISE EN PAGE*/
 
 #bloc-page {
     max-width: 100%;
@@ -37,8 +37,10 @@ h4 {
 /*HEADER*/
 
 header {
-    min-width: 100%;
+    position: relative; 
+    width: 100%;
     height: 70px;
+    margin: auto;
     align-items: center;
 
     .header__retour {
@@ -175,7 +177,7 @@ header {
 
         .description__assiette {
             flex-direction: row;
-            width: 380px;
+            width: 100%;
             max-width: 600px;
             height: 80px;
             background-color: white;
@@ -188,6 +190,7 @@ header {
             & .description {
                 flex-direction: row;
                 justify-content: space-between;
+                min-width: 0;
                 width: 100%;
                 
             }
@@ -195,13 +198,14 @@ header {
             & .assiette {
                 flex-direction: column;
                 row-gap: 10px;
-                min-width: 20%;
-                max-width: 70%;
+                min-width: 0;
+                max-width: 100%;
                 height: 50px;
                 margin: 15px;
                 margin-right: 0;
+                flex-shrink: 1;
                 h4, p {
-                    min-width: 50px;
+                    min-width: 0;
                     max-width: 100%;
                     text-overflow: ellipsis;
                     overflow: hidden;
@@ -229,7 +233,7 @@ header {
                 cursor: pointer;
 
                 .validation {
-                    width: 25%;
+                    width: 100px;
                     align-items: center;
                     justify-content: center;
                     background-color: $couleur-tertiaire;
@@ -269,7 +273,7 @@ header {
     }
 }
 
-/*Animations entrees*/
+/*ANIMATIONS ENTREES*/
 .premiere__entree {
     animation: animation-plats 1s linear 0.2s 1 normal forwards, opacite 0.5s linear 0.2s 1 normal forwards;
 }
@@ -280,7 +284,7 @@ header {
     animation: animation-plats 1s linear 0.8s 1 normal forwards, opacite 0.5s linear 0.8s 1 normal forwards;
 }
 
-/*Animations plats*/
+/*ANIMATIONS PLATS*/
 
 .premier__plat {
     animation: animation-plats 1s linear 1.3s normal forwards, opacite 0.5s linear 1.3s normal forwards;
@@ -292,7 +296,7 @@ header {
     animation: animation-plats 1s linear 1.9s normal forwards, opacite 0.5s linear 1.9s normal forwards;
 }
 
-/*Animtions desserts*/
+/*ANIMATIONS DESSERTS*/
 
 .premier__dessert {
     animation: animation-plats 1s linear 2.4s normal forwards, opacite 0.5s linear 2.4s normal forwards;
@@ -304,7 +308,7 @@ header {
     animation: animation-plats 1s linear 3s normal forwards, opacite 0.5s linear 3s normal forwards;
 }
 
-/*ANIMATION CHECK PLATS*/
+/*ANIMATIONS CHECK PLATS*/
 
 @keyframes rotation-check {
     from {

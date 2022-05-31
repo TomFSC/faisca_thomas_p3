@@ -1,7 +1,7 @@
 /*PROPRIETES GENERALE*/
-/*Couleurs*/
-/*Police*/
-/*Mise en page*/
+/*COULEURS*/
+/*POLICE*/
+/*MISE EN PAGE*/
 #bloc-page {
   position: relative;
   max-width: 100%;
@@ -31,7 +31,7 @@ h4 {
   background-color: white;
   top: 0;
   bottom: 0;
-  animation: effacement 2.5s ease-in-out 0.5s 1 normal forwards, disparition 0s linear 3s 1 normal forwards;
+  animation: effacement 2.5s ease-in-out 0.5s 1 normal forwards, disparition 0s linear 2.5s 1 normal forwards;
 }
 
 .load__spin {
@@ -172,7 +172,7 @@ header .fas {
   justify-content: center;
   align-items: center;
   row-gap: 25px;
-  background-color: #F7F6F6;
+  background-color: #f7f7f7;
 }
 .recherche .recherche__adresse .recherche__adresse--titre {
   text-align: center;
@@ -228,7 +228,7 @@ header .fas {
   flex-direction: row;
   align-items: center;
   border-radius: 25px;
-  background-color: #F7F6F6;
+  background-color: #f7f7f7;
   box-shadow: 2px 2px 5px lightgrey;
 }
 .guide .guide__etapes .guide__etapes--numero {
@@ -383,21 +383,12 @@ header .fas {
   -webkit-text-fill-color: transparent;
 }
 
-/*Animation coeurs*/
-@keyframes remplissage {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 /*FOOTER*/
 footer {
   flex-direction: column;
   width: 100%;
   margin-top: 50px;
-  color: whitesmoke;
+  color: white;
   background-color: #363535;
 }
 footer .footer__titre {
@@ -428,7 +419,7 @@ footer .footer__liste .footer__liste--contact .lien {
   color: white;
 }
 
-/*Mise en page tablette*/
+/*MISE EN PAGE TABLETTE*/
 @media (min-width: 768px) and (max-width: 991px) {
   /*FONCTIONNEMENT DU SITE*/
   .guide {
